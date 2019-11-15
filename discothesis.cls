@@ -307,7 +307,7 @@
 \def\ps@myheadings{%
     \let\@oddfoot\@empty\let\@evenfoot\@empty
     \def\@evenhead{ACEPTABILIDAD FÍSICA DE OBJETOS COMPACTOS\hfil\thepage}%
-    \def\@oddhead{\raisebox{1.5cm}[0pt][0pt]{ACEPTABILIDAD FÍSICA DE OBJETOS COMPACTOS}\hfil\raisebox{1.5cm}[0pt][0pt]{\thepage}}%
+    \def\@oddhead{\raisebox{1.5cm}[0pt][0pt]{ACEPTABILIDAD F\'ISICA DE OBJETOS COMPACTOS}\hfil\raisebox{1.5cm}[0pt][0pt]{\thepage}}%
     \let\@mkboth\@gobbletwo
     \let\chaptermark\@gobble
     \let\sectionmark\@gobble
