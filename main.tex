@@ -1,0 +1,177 @@
+\documentclass[a4paper, oneside,openany,12pt]{discothesis}
+
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-tabla]{babel}
+\decimalpoint
+\usepackage[T1]{fontenc}
+\usepackage{anysize}
+\marginsize{2.54cm}{2.54cm}{2.54cm}{2.54cm}
+\usepackage{perpage} %the perpage package
+\MakePerPage{footnote} %footnote counting per page
+
+%additional packages
+\PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{physics}
+\usepackage{tensor}
+\usepackage{float}
+\usepackage[position=top]{subfig}
+\usepackage[labelfont=bf]{caption}
+\usepackage{bm}
+\usepackage{siunitx}
+\usepackage{multicol}
+%\usepackage{hyperref}
+\usepackage{soul}
+\usepackage{pgfgantt}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{cancel}
+\usepackage{enumitem}
+\usepackage{etoolbox}
+\usepackage{booktabs,arydshln,ltablex}
+\allowdisplaybreaks
+
+\def\adl@drawiv#1#2#3{%
+        \hskip.5\tabcolsep
+        \xleaders#3{#2.5\@tempdimb #1{1}#2.5\@tempdimb}%
+                #2\z@ plus1fil minus1fil\relax
+        \hskip.5\tabcolsep}
+\newcommand{\cdashlinelr}[1]{%
+  \noalign{\vskip\aboverulesep
+           \global\let\@dashdrawstore\adl@draw
+           \global\let\adl@draw\adl@drawiv}
+  \cdashline{#1}
+  \noalign{\global\let\adl@draw\@dashdrawstore
+           \vskip\belowrulesep}}
+
+\newcommand{\cmmt}[1]{\ignorespaces}
+\newcommand{\quotes}[1]{``#1''}
+
+\usepackage{adjustbox}
+\usepackage{multirow}
+\appto\appendix{\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}}
+\usepackage{tikz}
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
+\newcommand{\Cross}{$\mathbin{\tikz [x=1.4ex,y=1.4ex,line width=.2ex] \draw (0,0) -- (1,1) (0,1) -- (1,0);}$}%
+
+\addto\captionsspanish{
+\renewcommand{\contentsname}{\hspace*{5.8cm}Tabla de Contenido}
+  \renewcommand{\listfigurename}{\hspace*{5.8cm}Lista de Figuras}
+  \renewcommand{\listtablename}{\hspace*{5.8cm}Lista de Tablas}
+  %\renewcommand{\cftaftertoctitle}{\hfill}	
+  %\renewcommand{\cftafterloatitle}{\hfill}
+}
+\renewcommand\spanishbibname{Referencias Bibliográficas}
+\newcommand{\listofappendix}{\vspace*{0.1cm}\normalsize\hspace*{5.5cm}\textbf{Lista de Apéndices}\normalsize}
+\newlistof[chapter]{anexo}{loa}{\listofappendix}
+%--------------------------------------------------------------------
+\newcommand{\anexo}[1]{%
+    \refstepcounter{anexo}
+    \addcontentsline{loa}{anexo}{\protect\numberline{\theanexo}#1}\par
+}
+
+\addto\captionsspanish{
+   \renewcommand{\BOthers}[1]{et al.\hbox{}}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DOCUMENT METADATA
+
+\thesistype{Trabajo de Grado para Optar al Título de Físico} % Master's Thesis, Bachelor's Thesis, Semester Thesis, Group Project
+\title{Aceptabilidad Física de Objetos Compactos con Ecuaciones de Estado Realistas}
+
+\author{David Leonardo Ramos Salamanca}
+\email{}%david.ramos.salamanca@outlook.com}
+
+\institute{%Grupo de Investigación en Relatividad y Gravitación  \\[2pt]
+Universidad Industrial de Santander \\[2pt]
+Facultad de Ciencias \\[2pt]
+Escuela de Física \\[2pt]
+Bucaramanga \\[2pt]
+2019}
+
+% Optionally, you can put in your own logo here
+%\logo{\includegraphics[width=0.4\columnwidth]{figures/uislogo}}
+
+\supervisors{Luis Alberto Núñez de Villavicencio Martínez \\
+Doctor en Ciencias}
+%\cosupervisors{}
+
+
+% Optionally, titleabs, authorabs, keywords and categories of the work can be shown (on the Abstract page)
+\keywords{Objetos compactos,aceptabilidad física, Estabilidad, Ecuación de estado}
+\titleabs{Aceptabilidad física de objetos compactos con ecuaciones de estado realistas\footnote{Trabajo de grado}} %Title for abstract
+\authorabs{David Leonardo Ramos Salamanca\footnote{Facultad de Ciencias. Escuela de física. Director: Luis A. Núñez de Villavicencio Martínez}} %Author for abstract
+%\categories{ACM categories go here.}
+
+%Información para abstract en otro idioma----------------------- 
+\keywordss{Compact objects, Physical acceptability, Stability, Equation of state}
+\titleabss{Physical acceptability of compact objects with realistic equations of state \footnote{Bachellor's thesis}} %Title for abstract
+\authorabss{David Leonardo Ramos Salamanca\footnote{Facultad de Ciencias. Escuela de física. Adviser: Luis A. Núñez de Villavicencio Martínez}}
+
+\date{\today}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+
+\frontmatter % do not remove this line
+\maketitle
+
+\cleardoublepage
+
+\input{content/acknowledgments.tex}
+
+\input{content/abstract.tex}
+
+
+\newpage
+\addtocontents{toc}{\protect\thispagestyle{myheadings}}
+\tableofcontents
+\addtocontents{toc}{\protect\thispagestyle{myheadings}}
+\newpage
+
+\addtocontents{toc}{\protect\thispagestyle{myheadings}}
+\listoffigures
+\addtocontents{toc}{\protect\thispagestyle{myheadings}}
+\newpage 
+
+\addtocontents{toc}{\protect\thispagestyle{myheadings}}
+\listoftables
+\addtocontents{toc}{\protect\thispagestyle{myheadings}}
+\newpage
+
+
+\mainmatter % do not remove this line
+
+% Start writing here-------------------------------------------
+
+\input{content/chapters/chapter1.tex}
+\input{content/chapters/chapter2.tex}
+\input{content/chapters/chapter3.tex}
+\input{content/chapters/chapter4.tex}
+\input{content/chapters/chapter5.tex}
+\input{content/chapters/chapter6.tex}
+
+
+\newpage
+% This displays the bibliography for all cited external documents. All references have to be defined in the file references.bib and can then be cited from within this document.
+\bibliographystyle{apacite}
+
+\bibliography{references}
+%\TODO{Chequear que los links estén correctos.}
+
+
+% This creates an appendix chapter, comment if not needed.
+
+\appendix
+\addcontentsline{toc}{chapter}{Apéndice}
+
+\input{content/appendices/appendix1.tex}
+%\input{content/appendices/appendix2.tex}
+%\input{content/appendices/appendix3.tex}
+
+\addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
+
+\end{document}

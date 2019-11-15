@@ -1,0 +1,307 @@
+\chapter{Curvatura de un espacio-tiempo estático con simetría esférica}\label{curvature}
+
+\anexo{Curvatura de un espacio-tiempo est\'atico con simetr\'ia esf\'erica}\label{anexoA}
+\addcontentsline{loa}{chapter}{Introducción}
+
+\noindent \small \textbf{Nota:} Las \quotes{$\dd$}s representarán derivadas exteriores y se usarán cantidades primadas para denotar derivación respecto a $r$.
+
+\normalsize
+\noindent La métrica de un espacio-tiempo estático con simetría esférica está dada por
+\begin{equation}
+    \bm{g}=-e^{2 a(r)} \dd{t} \otimes \dd{t}+e^{2 b(r)} \dd{r} \otimes \dd{r} +r^{2}\left(\dd{\theta} \otimes \dd{\theta}+\operatorname{sen}^{2} \theta \dd{\varphi} \otimes \dd{\varphi}\right).
+\end{equation}
+El tensor de curvatura de Riemann correspondiente a esta métrica puede ser calculado de manera simple haciendo uso del cálculo de Cartan (cf. \cite{Chandrasekhar1983,Straumann2013}). 
+
+En el cálculo de Cartan se hace uso del hecho de que es posible escoger como base del espacio cotangente $T^{*}_p$ en un punto $p$ de la variedad, una base $\omega^{\alpha}$ diferente a la base coordenada $\dd{x^\alpha}$. Esta base se escoge de modo tal que la métrica pueda ser escrita como 
+\begin{equation}
+    \bm{g}=\tensor{\eta}{_\alpha_\beta} \omega^{\alpha} \otimes \omega^{\beta},
+\end{equation}
+donde $\tensor{\eta}{_\alpha_\beta}$ es la métrica de Minkowski. Este tipo de bases se conocen como bases ortonormales. 
+Con lo anterior en mente, se define la tétrada de 1-formas base como
+%\begin{subequations}
+\begin{equation}
+    \omega^0=\,e^{a}\dd{t}, \quad
+    \omega^1=\,e^{b}\dd{r}, \quad
+    \omega^2=\,r\dd{\theta}, \quad
+    \omega^3=\,r\sen{\theta}\dd{\varphi}.
+    \label{tetrada}
+\end{equation}
+%\end{subequations}
+Usando las ecuaciones de estructura de Cartan para un espacio-tiempo sin torsión
+\begin{subequations}
+\begin{align}
+    \dd{\omega^\alpha} =& -\tensor{\Gamma}{^\alpha_ \mu} \wedge \omega^{\mu}\,, \label{1SE}\\
+    \tensor{\Omega}{^\alpha_\beta} =& \dd{ \tensor{\Gamma}{^\alpha_\beta}} + \tensor{\Gamma}{^\alpha_\mu}  \wedge \tensor{\Gamma}{^\mu_\beta}\,, \label{2SE}
+\end{align}
+\end{subequations}
+donde $\tensor{\Gamma}{^\alpha_\beta}$ son las 1-formas de conexión, las cuales cumplen 
+\begin{equation}
+    \Gamma_{\alpha \beta}+\Gamma_{\alpha \beta}=0. \label{skew}
+\end{equation}
+A partir de las ecuaciones de estructura \eqref{1SE} y \eqref{2SE} se pueden obtener las 2-formas de curvatura $\tensor{\Omega}{^\alpha_\beta}$ y a partir de estas, las componentes del tensor de Riemann ya que por definición 
+\begin{equation}
+    \tensor{\Omega}{^\alpha_\beta}=\frac{1}{2}\tensor{R}{^\alpha_\beta_\mu_\nu}\omega^\mu \wedge \omega^\nu.
+\end{equation}
+Comenzando por el cálculo de las 1-formas de conexión, se hallan las derivadas exteriores de la tétrada \eqref{tetrada}
+    \begin{align}
+    \begin{split}
+        \dd{\omega^0}=&\dd{e^a} \wedge \dd{t}+e^a\cancelto{0}{\dd{(\dd{t})}} = a^{\prime} e^a \dd{r}\wedge\dd{t} = -a^{\prime} e^{-b} \omega^0 \wedge \omega^1, \\
+        \dd{\omega^1}=&\dd{e^b}\wedge\dd{r}+e^b\cancelto{0}{\dd{(\dd{r})}} = b^{\prime}e^b\dd{r}\wedge\dd{r}=0, \\
+        \dd{\omega^2}=&\dd{r}\wedge\dd{\theta} + r\cancelto{0}{\dd{(\dd{\theta})}} = -\frac{e^{-b}}{r}\omega^2 \wedge\omega^1, \\
+        \dd{\omega^3}=&\dd{(rsen\theta)}\wedge\dd{\varphi} + r\sen{\theta}\cancelto{0}{\dd{(\dd{\varphi})}} = \sen{\theta}\dd{r}\wedge\dd{\varphi} + r\cos{\theta}\dd{\theta}\wedge\dd{\varphi} \\
+        & \phantom{{}\dd{(rsen\theta)}\wedge\dd{\varphi} + r\sen{\theta}\cancelto{0}{\dd{(\dd{\varphi})}}} = -\frac{e^{-b}}{r} \omega^3 \wedge \omega^1 - \frac{\cot{\theta}}{r} \omega^3 \wedge \omega^2.
+    \end{split}
+    \end{align}
+reemplazando en la primera ecuación de estructura \eqref{1SE} se obtiene
+    \begin{equation*}
+        \tensor{\Gamma}{^0_0}\wedge\omega^0 + \tensor{\Gamma}{^0_1}\wedge\omega^1+\tensor{\Gamma}{^0_2}\wedge\omega^2+\tensor{\Gamma}{^0_3}\wedge\omega^3 = \,a^{\prime} e^{-b} \omega^0 \wedge \omega^1 \hspace*{3.6cm}
+    \end{equation*}
+    \begin{align}
+    \begin{split}
+        \tensor{\Gamma}{^1_0}\wedge\omega^0 + \tensor{\Gamma}{^1_1}\wedge\omega^1+\tensor{\Gamma}{^1_2}\wedge\omega^2+\tensor{\Gamma}{^1_3}\wedge\omega^3 =&\, 0, \\
+        \tensor{\Gamma}{^2_0}\wedge\omega^0 + \tensor{\Gamma}{^2_1}\wedge\omega^1+\tensor{\Gamma}{^2_2}\wedge\omega^2+\tensor{\Gamma}{^2_3}\wedge\omega^3 =& \frac{e^{-b}}{r}\omega^2 \wedge\omega^1, \\
+        \tensor{\Gamma}{^0_0}\wedge\omega^0 + \tensor{\Gamma}{^3_1}\wedge\omega^1+\tensor{\Gamma}{^3_2}\wedge\omega^2+\tensor{\Gamma}{^3_3}\wedge\omega^3 =& \frac{e^{-b}}{r} \omega^3 \wedge \omega^1 + \frac{\cot{\theta}}{r} \omega^3 \wedge \omega^2.
+        \end{split}\label{1ee}
+    \end{align}    
+Teniendo en cuenta que la condición \eqref{skew} implica las relaciones 
+\begin{equation*}
+    \tensor{\Gamma}{^0_0}=0,\quad \tensor{\Gamma}{^0_i} = \tensor{\Gamma}{^i_0}, \quad \tensor{\Gamma}{^i_i} = 0, \quad \tensor{\Gamma}{^i_j} = -\tensor{\Gamma}{^j_i},
+\end{equation*}
+de \eqref{1ee} se obtienen que las 1-formas de conexión no nulas son
+\begin{subequations}
+    \begin{align}
+        \tensor{\Gamma}{^0_1} =& \,\tensor{\Gamma}{^1_0} = a^{\prime} e^{-b} \omega^0, \label{1fa} \\
+        \tensor{\Gamma}{^2_1} =& -\tensor{\Gamma}{^1_2} = \frac{e^{-b}}{r}\omega^2, \label{1fb} \\
+        \tensor{\Gamma}{^3_1} =& -\tensor{\Gamma}{^1_3} = \frac{e^{-b}}{r}\omega^3, \label{1fc} \\
+        \tensor{\Gamma}{^3_2} =& -\tensor{\Gamma}{^2_3} = \frac{\cot{\theta}}{r} \omega^3. \label{1fd}
+    \end{align}
+\end{subequations}
+
+
+Hallando las derivadas exteriores de \eqref{1fa}--\eqref{1fd} 
+\begingroup
+\allowdisplaybreaks
+\begin{subequations}
+    \begin{align}
+        \dd{\tensor{\Gamma}{^0_1}} =& \dd{(a^\prime e^{-b})}\wedge\omega^0 + a^\prime e^{-b}\dd{\omega^0} \nonumber \\
+        =& e^{-b}\dd{(a^\prime)}\wedge\omega^0 + a^\prime \dd{(e^{-b})}\wedge\omega^0-a^{\prime 2} e^{-2b}\omega^0\wedge\omega^1 \nonumber \\
+        =& a^{\prime\prime} e^{-b} \dd{r}\wedge\omega^0 -a^{\prime}b^{\prime}e^{-b}\dd{r}\wedge\omega^0-a^{\prime 2}e^{-2b}\omega^0\wedge\omega^1 \nonumber \\
+        =& e^{-2b}(a^{\prime\prime}+a^{\prime 2}-a^\prime b^\prime) \omega^1 \wedge \omega^0, \\
+        \dd{\tensor{\Gamma}{^2_1}} =& \dd{\left(\frac{e^{-b}}{r}\right)}\wedge\omega^2 + \frac{e^{-b}}{r}\dd{\omega^2} \nonumber \\
+        =& \frac{1}{r}\dd{e^{-b}}\wedge\omega^2 + e^{-b} \dd{\left(\frac{1}{r}\right)}\wedge\omega^2 + \frac{e^{-2b}}{r^2}\omega^1 \wedge \omega^2 \nonumber \\
+        =& -\frac{b^\prime}{r}e^{-b}\dd{r}\wedge\omega^2 -\cancel{\frac{e^{-b}}{r^2}\dd{r}\wedge\omega^2} +\cancel{\frac{e^{-2b}}{r^2}\omega^1\wedge\omega^2} \nonumber \\
+        =& - \frac{b^\prime e^{-2b}}{r} \omega^1 \wedge \omega^2, \\
+        \dd{\tensor{\Gamma}{^2_1}} =& \dd{\left(\frac{e^{-b}}{r}\right)}\wedge\omega^3 + \frac{e^{-b}}{r}\dd{\omega^3} \nonumber \\
+        =& \frac{1}{r}\dd{\left(e^{-b}\right)}\wedge\omega^3 + e^{-b}\dd{\left(\frac{1}{r}\right)}\wedge\omega^3+\frac{e^{-2b}}{r^2}\omega^1\wedge\omega^3 + \frac{e^-b}{r^2}\cot{\theta}\omega^2\wedge\omega^3 \nonumber \\
+        =& -\frac{b^\prime e^{-2b}}{r}\dd{r}\wedge\omega^3-\cancel{\frac{e^{-b}}{r^2}\dd{r}\wedge\omega^3} + \cancel{\frac{e^{-2b}}{r^2}\omega^1\wedge\omega^3}+\frac{e^{-b}}{r^2}\cot{\theta}\omega^2\wedge\omega^3 \nonumber \\
+        =& -\frac{b^\prime e^{-2b}}{r}\omega^1\wedge\omega^3 + \frac{e^{-b}\cot{\theta}}{r^2}\omega^2\wedge\omega^3, \\
+        \dd{\tensor{\Gamma}{^3_2}}=& \dd{\left( \frac{\cot{\theta}}{r} \right)}\wedge\omega^3 + \frac{\cot{\theta}}{r}\dd{\omega^3} \nonumber \\ 
+        =& \frac{1}{r}\dd{\qty(\cot{\theta})}+\cot{\theta}\dd{\qty(\frac{1}{r})}\wedge\omega^3 \nonumber \\
+        =& -\frac{\csc^2{\theta}}{r}\dd{\theta}\wedge\omega^3 -\cancel{ \frac{\cot{\theta}}{r^2}\dd{r}\wedge\omega^3}+\cancel{\frac{\cot{\theta}e^{-b}}{r^2}\omega^1\wedge\omega^3}+\frac{\cot^2{\theta}}{r^2}\omega^2\wedge\omega^3 \nonumber \\
+        =& \frac{1}{r^2}\cancelto{-1}{(\cot^2{\theta}-\csc^2{\theta})}\omega^2\wedge\omega^3 \nonumber \\
+        =& -\frac{1}{r^2}\omega^2\wedge\omega^3.
+    \end{align}
+\end{subequations}
+\endgroup
+Reemplazando las 1-formas de conexión y sus derivadas exteriores en la segunda ecuación de estructura \eqref{2SE} se obtienen las 2-formas de curvatura $\tensor{\Omega}{^\alpha_\beta}$
+\begingroup
+\allowdisplaybreaks
+\begin{subequations}
+    \begin{align}
+        \tensor{\Omega}{^0_1}=&\dd{\tensor{\Gamma}{^0_1}}+\cancelto{0}{\tensor{\Gamma}{^0_0}}\wedge\tensor{\Gamma}{^0_1}+\tensor{\Gamma}{^0_1}\wedge\cancelto{0}{\tensor{\Gamma}{^1_1}}+\cancelto{0}{\tensor{\Gamma}{^0_2}}\wedge\tensor{\Gamma}{^2_1}+\cancelto{0}{\tensor{\Gamma}{^0_3}}\wedge\tensor{\Gamma}{^3_1} \nonumber \\
+        =& -e^{-2b}(a^{\prime\prime}+a^{\prime 2}-a^\prime b^\prime)\omega^0\wedge\omega^1 = \frac{1}{2}\tensor{R}{^0_1_\alpha_\beta}\omega^\alpha\wedge\omega^\beta, \\
+        \tensor{\Omega}{^0_2}=&\dd{\cancelto{0}{\tensor{\Gamma}{^0_2}}}+\cancelto{0}{\tensor{\Gamma}{^0_0}}\wedge\tensor{\Gamma}{^0_2}+\tensor{\Gamma}{^0_1}\wedge\tensor{\Gamma}{^1_2}+\cancelto{0}{\tensor{\Gamma}{^0_2}}\wedge\cancelto{0}{\tensor{\Gamma}{^2_2}}+\cancelto{0}{\tensor{\Gamma}{^0_3}}\wedge\tensor{\Gamma}{^3_2} \nonumber \\
+        =& -\frac{a^\prime e^{-2b}}{r}\omega^0\wedge\omega^2= \frac{1}{2}\tensor{R}{^0_2_\alpha_\beta}\omega^\alpha\wedge\omega^\beta, \\
+        \tensor{\Omega}{^0_3}=&\dd{\cancelto{0}{\tensor{\Gamma}{^0_3}}}+\cancelto{0}{\tensor{\Gamma}{^0_0}}\wedge\cancelto{0}{\tensor{\Gamma}{^0_3}}+\tensor{\Gamma}{^0_1}\wedge\tensor{\Gamma}{^1_3}+\cancelto{0}{\tensor{\Gamma}{^0_2}}\wedge\tensor{\Gamma}{^2_3}+\cancelto{0}{\tensor{\Gamma}{^0_3}}\wedge\cancelto{0}{\tensor{\Gamma}{^3_3}} \nonumber \\
+        =& -\frac{a^\prime e^{-2b}}{r}\omega^0\wedge\omega^3= \frac{1}{2}\tensor{R}{^0_3_\alpha_\beta}\omega^\alpha\wedge\omega^\beta, \\
+        \tensor{\Omega}{^1_2}=&\dd{\tensor{\Gamma}{^1_2}}+\tensor{\Gamma}{^1_0}\wedge\cancelto{0}{\tensor{\Gamma}{^0_2}}+\cancelto{0}{\tensor{\Gamma}{^1_1}}\wedge\tensor{\Gamma}{^1_2}+\tensor{\Gamma}{^1_2}\wedge\cancelto{0}{\tensor{\Gamma}{^2_2}}+\tensor{\Gamma}{^1_3}\wedge\tensor{\Gamma}{^3_2} \nonumber \\
+        =& \frac{e^{-2b}}{r}\omega^1\wedge\omega^2-\frac{e^{-b}\cot{\theta}}{r^2}\cancelto{0}{\omega^3\wedge\omega^3} \nonumber \\
+        =& \frac{b^\prime e^{-2b}}{r}\omega^1\wedge\omega^2 = \frac{1}{2}\tensor{R}{^1_2_\alpha_\beta}\omega^\alpha\wedge\omega^\beta, \\
+        \tensor{\Omega}{^1_3}=&\dd{\tensor{\Gamma}{^1_3}}+\tensor{\Gamma}{^1_0}\wedge\cancelto{0}{\tensor{\Gamma}{^0_3}}+\cancelto{0}{\tensor{\Gamma}{^1_1}}\wedge\tensor{\Gamma}{^1_3}+\tensor{\Gamma}{^1_2}\wedge\tensor{\Gamma}{^2_3}+\tensor{\Gamma}{^1_3}\wedge\cancelto{0}{\tensor{\Gamma}{^3_3}} \nonumber \\
+        =& \frac{b^\prime e^{-2b}}{r}\omega^1\wedge\omega^3-\cancel{\frac{e^{-b}\cot{\theta}}{r^2}\omega^2\wedge\omega^3}+\cancel{\frac{e^{-b}\cot{\theta}}{r^2}\omega^2\wedge\omega^3} \nonumber \\
+        =& \frac{b^\prime e^{-2b}}{r}\omega^1\wedge\omega^3 = \frac{1}{2}\tensor{R}{^1_3_\alpha_\beta}\omega^\alpha\wedge\omega^\beta, \\
+        \tensor{\Omega}{^2_3}=&\dd{\tensor{\Gamma}{^2_3}}+\cancelto{0}{\tensor{\Gamma}{^2_0}}\wedge\cancelto{0}{\tensor{\Gamma}{^0_3}}+\tensor{\Gamma}{^2_1}\wedge\tensor{\Gamma}{^1_3}+\cancelto{0}{\tensor{\Gamma}{^2_2}}\wedge\tensor{\Gamma}{^2_3}+\tensor{\Gamma}{^2_3}\wedge\cancelto{0}{\tensor{\Gamma}{^3_3}} \nonumber \\
+        =& \frac{1}{r^2}\omega^2\wedge\omega^3-\frac{e^{-2b}}{r^2}\omega^2\wedge\omega^3 \nonumber \\
+        =& \frac{1-e^{-2b}}{r^2}\omega^2\wedge\omega^3 = \frac{1}{2}\tensor{R}{^2_3_\alpha_\beta}\omega^\alpha\wedge\omega^\beta,
+    \end{align}
+\end{subequations}
+\endgroup
+y por inspección se obtienen las componentes independientes del tensor de Riemann
+
+\begin{align*}
+        \tensor{R}{^0_1_0_1} &= -e^{-2b}(a^{\prime\prime}+a^{\prime 2}-a^\prime b^\prime), \\
+        \tensor{R}{^0_2_0_2} &= -\frac{a^\prime e^{-2b}}{r}, \\ 
+        \tensor{R}{^0_3_0_3} &= -\frac{a^\prime e^{-2b}}{r}, \\
+        \tensor{R}{^1_2_1_2} &= \frac{b^\prime e^{-2b}}{r}, \\
+        \tensor{R}{^1_3_1_3} &= \frac{b^\prime e^{-2b}}{r}, \\
+        \tensor{R}{^2_3_2_3} &= \frac{1-e^{-2b}}{r^2}.
+\end{align*}
+Usando la antisimetría en el primer y segundo par de índices
+\begin{equation}
+    \tensor{\eta}{_\mu_\alpha}\tensor{R}{^\mu_\beta_\gamma_\delta}=-\tensor{\eta}{_\mu_\beta}\tensor{R}{^\mu_\alpha_\gamma_\delta}\quad \text{y} \quad \tensor{R}{^\alpha_\beta_\gamma_\delta}=\tensor{R}{^\alpha_\beta_\delta_\gamma},
+\end{equation}
+se obtienen las componentes restantes
+\begin{equation}
+    \begin{split}
+    \tensor{R}{^0_1_0_1} &= \tensor{R}{^1_0_0_1} = -\tensor{R}{^0_1_1_0} = -\tensor{R}{^1_0_1_0}, \\
+    \tensor{R}{^0_2_0_2} &=  \tensor{R}{^2_0_0_2} = - \tensor{R}{^0_2_2_0} = - \tensor{R}{^2_0_2_0}, \\
+    \tensor{R}{^0_3_0_3} &= \tensor{R}{^3_0_0_3} = -\tensor{R}{^0_3_3_0}=-\tensor{R}{^3_0_3_0},
+    \end{split}
+    \qquad
+    \begin{split}
+    \tensor{R}{^1_2_1_2} &= \tensor{R}{^2_1_2_1} = -\tensor{R}{^1_2_2_1}=-\tensor{R}{^2_1_1_2}, \\
+    \tensor{R}{^1_3_1_3} &= \tensor{R}{^3_1_3_1} = -\tensor{R}{^1_3_3_1} = -\tensor{R}{^3_1_1_3}, \\
+    \tensor{R}{^2_3_2_3} &= \tensor{R}{^3_2_3_2} = -\tensor{R}{^2_3_3_2} = -\tensor{R}{^3_2_2_3}.
+    \end{split}
+\end{equation}
+Contrayendo el tensor de Riemann se halla el tensor de Ricci
+\begin{equation}
+    \tensor{R}{_\alpha_\beta}=\tensor{R}{^\mu_\alpha_\mu_\beta},
+\end{equation}
+cuyas componentes serán
+\begin{subequations}
+\begin{align}
+    \tensor{R}{_0_0}&=\tensor{R}{^0_0_0_0} + \tensor{R}{^1_0_1_0} + \tensor{R}{^2_0_2_0} + \tensor{R}{^3_0_3_0} \nonumber \\
+    &= \frac{2a^\prime-r a^\prime b^\prime +r a^{\prime 2}+r a^{\prime\prime}}{r}e^{-2b} \\
+    \tensor{R}{_1_1}&=\tensor{R}{^0_1_0_1} + \tensor{R}{^1_1_1_1} + \tensor{R}{^2_1_2_1} + \tensor{R}{^3_1_3_1} \nonumber \\
+    &=\frac{2b^\prime+r a^\prime b^\prime -r a^{\prime 2}-r a^{\prime\prime}}{r}e^{-2b} \\
+    \tensor{R}{_2_2}&=\tensor{R}{^0_2_0_2} + \tensor{R}{^1_2_1_2} + \tensor{R}{^2_2_2_2} + \tensor{R}{^3_2_3_2} \nonumber \\
+    &= -\frac{a^\prime e^{-2b}}{r}+\frac{b^\prime e^{-2b}}{r}+\frac{1-e^{-2b}}{r} \\
+    \tensor{R}{_3_3}&=\tensor{R}{^0_3_0_3} + \tensor{R}{^1_3_1_3} + \tensor{R}{^2_3_2_3} + \tensor{R}{^3_3_3_3} \nonumber \\
+    &= -\frac{a^\prime e^{-2b}}{r}+\frac{b^\prime e^{-2b}}{r}+\frac{1-e^{-2b}}{r}.
+\end{align}
+\end{subequations}
+y el escalar de curvatura contrayendo el tensor de Ricci
+\begin{align}
+    R&=\tensor{\eta}{^\alpha^\beta} \tensor{R}{_\alpha_\beta} \nonumber \\
+    &= \tensor{\eta}{^0^0} \tensor{R}{_0_0} + \tensor{\eta}{^1^1} \tensor{R}{_1_1} + \tensor{\eta}{^2^2} \tensor{R}{_2_2} + \tensor{\eta}{^3^3} \tensor{R}{_3_3} \nonumber \\
+    &= 2\qty(\frac{b^\prime-a^\prime+r a^\prime b^\prime -r a^{\prime 2}-r a^{\prime\prime}}{r}e^{-2b}+\frac{b^\prime-a^\prime}{r}e^{-2b}+\frac{1-e^{-2b}}{r^2}).
+\end{align}
+El tensor de Einstein, definido como
+\begin{equation}
+    \bm{G}=\bm{R}-\frac{1}{2}R\bm{g},
+\end{equation}
+o en componentes mixtas
+\begin{equation}
+    \tensor{G}{^\alpha_\beta}=\tensor{R}{^\alpha_\beta}-\frac{1}{2}R\tensor{\delta}{^\alpha_\beta}=\tensor{\eta}{^\alpha^\mu}\tensor{R}{_\mu_\beta}-\frac{1}{2}R\tensor{\delta}{^\alpha_\beta},
+\end{equation}
+puede ser calculado usando los resultados anteriores
+\begingroup
+\allowdisplaybreaks
+\begin{subequations}
+\begin{align}
+    \tensor{G}{^0_0} &=  \tensor{\eta}{^0^0}\tensor{R}{_0_0}-\frac{1}{2}R\tensor{\delta}{^0_0} \nonumber \\
+    &= - \frac{2a^\prime-r a^\prime b^\prime +r a^{\prime 2}+r a^{\prime\prime}}{r}e^{-2b} -\frac{b^\prime-a^\prime+r a^\prime b^\prime -r a^{\prime 2}+r a^{\prime\prime}}{r}e^{-2b} \nonumber \\
+    &\phantom{{}= - \frac{2a^\prime-r a^\prime b^\prime +r a^{\prime 2}+r a^{\prime\prime}}{r}e^{-2b}} -\frac{b^\prime-a^\prime}{r}e^{-2b}+\frac{1-e^{-2b}}{r^2} \nonumber \\
+    &= -\frac{1}{r^2}+e^{-2b}\qty(\frac{1}{r^2}-2\frac{b^\prime}{r}), \\
+    \tensor{G}{^1_1} &=  \tensor{\eta}{^1^1}\tensor{R}{_1_1}-\frac{1}{2}R\tensor{\delta}{^1_1} \nonumber \\
+    &= \frac{2b^\prime+r a^\prime b^\prime -r a^{\prime 2}-r a^{\prime\prime}}{r}e^{-2b} -\frac{b^\prime-a^\prime+r a^\prime b^\prime -r a^{\prime 2}+r a^{\prime\prime}}{r}e^{-2b} \nonumber \\
+    &\phantom{{}= - \frac{2a^\prime-r a^\prime b^\prime +r a^{\prime 2}+r a^{\prime\prime}}{r}e^{-2b}}-\frac{b^\prime-a^\prime}{r}e^{-2b}+\frac{1-e^{-2b}}{r^2} \nonumber \\
+    &= -\frac{1}{r^2}+e^{-2b}\qty(\frac{1}{r^2}+2\frac{a^\prime}{r}), \\
+    \tensor{G}{^2_2}&=\tensor{G}{^3_3} =  \tensor{\eta}{^2^2}\tensor{R}{_2_2}-\frac{1}{2}R\tensor{\delta}{^2_2} \nonumber \\
+    &=-\frac{a^\prime e^{-2b}}{r}+\frac{b^\prime e^{-2b}}{r}+\frac{1-e^{-2b}}{r}-\frac{b^\prime-a^\prime+r a^\prime b^\prime -r a^{\prime 2}+r a^{\prime\prime}}{r}e^{-2b} \nonumber \\
+    &\phantom{{}= - \frac{a^\prime e^{-2b}}{r}+\frac{b^\prime e^{-2b}}{r}+\frac{1-e^{-2b}}{r}}-\frac{b^\prime-a^\prime}{r}e^{-2b}+\frac{1-e^{-2b}}{r^2} \nonumber \\
+    &= e^{-2b}\qty(a^{\prime\prime}-a^{\prime}b^{\prime}+a^{\prime 2}+\frac{a^{\prime}-b^\prime}{r}).
+\end{align}
+\end{subequations}
+\endgroup
+
+\section{Solución exterior}
+\noindent \small\textbf{Nota:} En esta sección y la siguiente se adopta la notación del documento principal: las \quotes{d}'s representan diferenciales usuales, $a\to \nu$ y $b \to \lambda$.
+
+\normalsize
+Las ecuaciones de Einstein para el espacio-tiempo exterior a una estrella estática con simetría esférica son
+\begin{align}
+     G _ { 0 } ^ { 0 } = e ^ { - 2 \lambda } \left( \frac { 1 } { r ^ { 2 } } - \frac { 2 \lambda ^ { \prime } } { r } \right) - \frac { 1 } { r ^ { 2 } } &= 0, \\
+      G _ { 1 } ^ { 1 } = e ^ { - 2 \lambda } \left( \frac { 1 } { r ^ { 2 } } + \frac { 2 \nu ^ { \prime } } { r } \right) - \frac { 1 } { r ^ { 2 } } &= 0, \\
+      G _ { 2 } ^ { 2 } = e ^ { - 2 \lambda } \left( \nu ^ { \prime \prime } + \nu ^ { \prime 2 } - \lambda ^ { \prime } \nu ^ { \prime } + \frac { \nu ^ { \prime } - \lambda ^ { \prime } } { r } \right) &=0.
+\end{align}
+Restando las dos primeras ecuaciones se obtiene
+\begin{equation*}
+    G _ { 0 } ^ { 0} - G _ { 1 } ^ { 1} = -e^{-2\lambda} (\nu^{\prime}+\lambda^{\prime}) = 0, 
+\end{equation*}
+de donde
+\begin{align*}
+    \nu^{\prime}+\lambda^{\prime} =& \,0 \\
+    \int_{r}^{\infty} \qty(\dv{\nu}{r}+\dv{\lambda}{r})\dd{r} =& \,0 \\
+    \eval{\nu}_{r}^{\infty} + \eval{\lambda}_{r}^{\infty} =& \, 0,
+\end{align*}
+como $\lim_{r\to \infty}\nu(r)=\lim_{r\to \infty}\lambda(r)=0$, se llega a que
+\begin{equation}
+    \nu=-\lambda \quad \Longrightarrow \quad e^{2\nu}=e^{-2\lambda}. \label{metricfsschw}
+\end{equation}
+Integrando ahora la primera ecuación
+\begin{align}
+    G _ { 0 } ^ { 0} = -\frac{1}{r^{2}}+e^{-2\lambda}\left(\frac{1}{r^{2}}-\frac{2 \lambda^{\prime}}{r}\right) =& 0 \nonumber \\
+    e^{-2\lambda}\left(1-2 \lambda^{\prime} r \right) =& 1 \nonumber \\
+    \frac{d\left(r e^{-2 \lambda}\right)}{d r} =& 1 \nonumber \\ 
+    r e^{-2 \lambda} =& r - 2 M  \nonumber \\
+    e^{2 \lambda} =& \left(1-\frac{2 M}{r}\right)^{-1},
+\end{align}
+donde $M$ es una constante de integración, que puede ser interpretada como la masa gravitacional al comparar con el límite de campo débil. Finalmente, usando \eqref{metricfsschw} se obtiene
+\begin{equation}
+    e^{2\nu}=1-\frac{2 M}{r},
+\end{equation}
+
+
+
+
+\section{Solución interior}
+\noindent Las ecuaciones de Einstein para el espacio-tiempo al interior de una estrella estática con simetría esférica, con la materia modelada como un fluido perfecto, serán
+
+\begin{align}
+     e ^ { - 2 \lambda } \left( \frac { 1 } { r ^ { 2 } } - \frac { 2 \lambda ^ { \prime } } { r } \right) - \frac { 1 } { r ^ { 2 } } =&  -8\pi\rho, \label{EE00} \\
+    e ^ { - 2 \lambda } \left( \frac { 1 } { r ^ { 2 } } + \frac { 2 \nu ^ { \prime } } { r } \right) - \frac { 1 } { r ^ { 2 } } =& \, 8\pi P, \label{EE11}\\
+    e ^ { - 2 \lambda } \left( \nu ^ { \prime \prime } + \nu ^ { \prime 2 } - \lambda ^ { \prime } \nu ^ { \prime } + \frac { \nu ^ { \prime } - \lambda ^ { \prime } } { r } \right) =& \, 8\pi P. \label{EE22}
+\end{align}
+Además la conservación local de la energía-momento
+\begin{equation}
+    \qty(\nabla_{\omega_\nu}\mathbf{T})^{\mu \nu} = 0 \label{CEM1}.
+\end{equation}
+Reescribiendo la Ecuación \eqref{EE00} como
+\begin{equation*}
+    \dv{\qty[r\qty(1-e^{-2\lambda})]}{r}=8\pi\rho r^2,
+\end{equation*}
+y definiendo la variable
+\begin{equation}
+    m(r) \equiv \frac{1}{2}r\qty(1-e^{-2\lambda}) \quad \rightarrow \quad e^{2\lambda} = \qty(1-\frac{2m}{r})^{-1} \label{gravmass} 
+\end{equation}
+la Ecuación \eqref{EE00} en términos de $m$ es simplemente
+\begin{equation}
+    \dv{m}{r} = 4\pi \rho r^2
+\end{equation}
+
+Reescribiendo ahora la Ecuación \eqref{EE11} como
+\begin{equation*}
+    2 r^2 e^{-2\lambda} \nu^{\prime} - r\qty(1- e^{-2\lambda}) = 8\pi P r^3,
+\end{equation*}
+y usando el cambio de variable \eqref{gravmass}, la Ecuación \eqref{EE11} se convierte en 
+\begin{equation}
+    \dv{\nu}{r}= \frac{m+4\pi P r^3}{r\qty(r-2m)}.\label{dnutovv}
+\end{equation}
+
+Por último conservación local de la energía requiere
+\begin{equation}
+      \omega_{\nu} \tensor{T}{^\mu ^\nu} + \tensor{\Gamma}{^\mu _\alpha _\nu}\tensor{T}{^\alpha ^\nu} + \tensor{\Gamma}{^\nu _\alpha _\nu}\tensor{T}{^\mu ^\alpha} = 0, \label{covT}
+\end{equation}
+donde la conexión $\tensor{\Gamma}{^\alpha _\beta _\gamma}$ (conexión del espín) se relaciona con las 1-formas de conexión \eqref{1fa}, \eqref{1fb}, \eqref{1fc} y \eqref{1fd} mediante
+\begin{equation}
+    \tensor{\Gamma}{^\alpha _\beta} = \tensor{\Gamma}{^\alpha _\beta _\gamma} \omega^\gamma, 
+\end{equation}
+las componentes de la conexión serán entonces
+\begin{align}
+        \tensor{\Gamma}{^0_1_0} =& \,\tensor{\Gamma}{^1_0_0} = \nu^{\prime} e^{-\lambda}, \label{sca} \\
+        \tensor{\Gamma}{^2_1_2} =& -\tensor{\Gamma}{^1_2_2} = \frac{e^{-\lambda}}{r}, \label{scb} \\
+        \tensor{\Gamma}{^3_1_3} =& -\tensor{\Gamma}{^1_3_3} = \frac{e^{-\lambda}}{r}, \label{scc} \\
+        \tensor{\Gamma}{^3_2_3} =& -\tensor{\Gamma}{^2_3_3} = \frac{\cot{\theta}}{r} . \label{scd}
+    \end{align}
+Usando este resultado se encuentra que la única componente que no se anula idénticamente en la Ecuación \eqref{covT} corresponde a $\mu=1$
+\begin{align*}
+    \omega_{1} \tensor{T}{^1 ^1} + \tensor{\Gamma}{^1 _0 _0}\tensor{T}{^0 ^0} + \tensor{\Gamma}{^1 _i _i}\tensor{T}{^i ^i} + \tensor{\Gamma}{^0 _1 _0}\tensor{T}{^1 ^1} + \tensor{\Gamma}{^i _1 _i}\tensor{T}{^1 ^1} &= 0 \\
+    e^{-\lambda} P^{\prime} + \nu^{\prime} e^{-\lambda} \rho -2 \frac{e^{-\lambda}}{r} P + \nu^{\prime} e^{-\lambda} P  + 2\frac{e^{-\lambda}}{r} P  &= 0 \\
+    P^{\prime} + (\rho + P) \nu^{\prime} &= 0,
+\end{align*}
+usando la Ecuación \eqref{dnutovv} se obtiene finalmente
+\begin{equation}
+    \dv{P}{r} = -(P+\rho)\frac{m+4\pi P r^3}{r\qty(r-2m)}.\label{dptovv}
+\end{equation}
