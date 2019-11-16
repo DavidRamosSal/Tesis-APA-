@@ -661,7 +661,7 @@
 	\fi												%kai
 \begin{center}
 	    \if@appendix
-	        {\normalsize \bfseries Ap\'endice. \space #1 \par\nobreak}
+	        {\normalsize\bfseries Ap\'endice\def\@oddhead{\raisebox{1.5cm}[0pt][0pt]{ACEPTABILIDAD F\'ISICA DE OBJETOS COMPACTOS}\hfil\raisebox{1.5cm}[0pt][0pt]{\thepage}}.\space #1 \par\nobreak}
 	    \else
 		    {\normalsize \bfseries \thechapter. \space #1 \par\nobreak}
 		%\vskip 30\p@
@@ -755,7 +755,7 @@
                                 \normalfont\bfseries #1}
 
 \newenvironment{abstract}
-	{\chapter*{\hspace*{6cm}Resumen}
+	{\chapter*{\hspace*{7cm}Resumen}
 	 {\noindent\textbf{T\'itulo:}} \@titleabs \\[9pt]
 	 {\textbf{Autor:}} \@authorabs \\[9pt]
 	 \ifx \@keywords \@empty
@@ -776,7 +776,7 @@
 	
 	
 \newenvironment{abstract1}
-	{\chapter*{\hspace*{6cm}Abstract}
+	{\chapter*{\hspace*{7cm}Abstract}
 	 {\noindent\textbf{Title:}} \@titleabss \\[9pt]
 	 {\textbf{Author:}} \@authorabss \\[9pt]
 	 \ifx \@keywords \@empty
