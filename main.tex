@@ -29,6 +29,7 @@
 \usepackage{enumitem}
 \usepackage{etoolbox}
 \usepackage{booktabs,arydshln,ltablex}
+\setlength{\parindent}{5ex}
 \allowdisplaybreaks
 
 \def\adl@drawiv#1#2#3{%
@@ -61,7 +62,7 @@
   %\renewcommand{\cftaftertoctitle}{\hfill}	
   %\renewcommand{\cftafterloatitle}{\hfill}
 }
-\renewcommand\spanishbibname{Referencias Bibliográficas}
+\renewcommand\spanishbibname{\hspace*{5.8cm}Referencias Bibliográficas}
 \newcommand{\listofappendix}{\vspace*{0.1cm}\normalsize\hspace*{5.5cm}\textbf{Lista de Apéndices}\normalsize}
 \newlistof[chapter]{anexo}{loa}{\listofappendix}
 %--------------------------------------------------------------------
@@ -73,6 +74,11 @@
 \addto\captionsspanish{
    \renewcommand{\BOthers}[1]{et al.\hbox{}}
 }
+
+%\usepackage{titlesec}
+%\titleformat{\subsection}[runin]{\normalfont\normalsize\bfseries}{\thesubsection. }{0pt}{\addperiod}
+%\titlespacing{\subsection}{68pt}{0pt}{10pt}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % DOCUMENT METADATA
