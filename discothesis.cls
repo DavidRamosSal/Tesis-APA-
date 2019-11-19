@@ -122,7 +122,7 @@
 \usepackage{enumitem}
 %--------------------------------------------------------------
 % APA Specs
-\usepackage[nosectionbib]{apacite}
+\usepackage[nosectionbib,notocbib]{apacite}
 \usepackage{mathptmx}
 \usepackage{setspace}
 \spacing{2.0}
@@ -682,13 +682,18 @@
 \thispagestyle{myheadings}
 %kai  \vspace*{50\p@}%
   \vspace*{-40\p@}%
-  {\parindent \z@ \raggedright
+  %\begin{center}
+  {\parindent \z@ 
     \normalfont
     %\interlinepenalty\@M
 %kai    \Huge \bfseries  #1\par\nobreak
+    %\begin{center}
     \flushleft \bfseries \normalsize #1\par\nobreak
+    %\end{center}
     %\vskip 40\p@
-  }}
+  }
+   % \end{center}
+}
 \newcommand\section{\@startsection {section}{1}{\z@}%
                                    {-3.5ex \@plus -1ex \@minus -.2ex}%
                                    {2.3ex \@plus.2ex}%
@@ -995,9 +1000,10 @@
 \let\l@table\l@figure
 \newdimen\bibindent
 \setlength\bibindent{1.5em}
+
 \newenvironment{thebibliography}[1]
      {\chapter*{\bibname}%
-      \addcontentsline{toc}{chapter}{\bibname}%kai
+      %\addcontentsline{toc}{chapter}{RER}%kai
       \@mkboth{\textsc{\bibname}}{\textsc{\bibname}}%
       \list{\@biblabel{\@arabic\c@enumiv}}%
            {\settowidth\labelwidth{\@biblabel{#1}}%

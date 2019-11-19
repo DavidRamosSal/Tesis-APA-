@@ -59,10 +59,12 @@
 \renewcommand{\contentsname}{\hspace*{5.8cm}Tabla de Contenido}
   \renewcommand{\listfigurename}{\hspace*{5.8cm}Lista de Figuras}
   \renewcommand{\listtablename}{\hspace*{5.8cm}Lista de Tablas}
+  \renewcommand{\bibname}{\hspace*{5cm}Referencias Bibliográficas}
   %\renewcommand{\cftaftertoctitle}{\hfill}	
   %\renewcommand{\cftafterloatitle}{\hfill}
 }
-\renewcommand\spanishbibname{\hspace*{5.8cm}Referencias Bibliográficas}
+%\renewcommand\spanishbibname{Referencias Bibliográficas}
+
 \newcommand{\listofappendix}{\vspace*{0.1cm}\normalsize\hspace*{5.5cm}\textbf{Lista de Apéndices}\normalsize}
 \newlistof[chapter]{anexo}{loa}{\listofappendix}
 %--------------------------------------------------------------------
@@ -171,13 +173,14 @@ Doctor en Ciencias}
 \input{content/chapters/chapter6.tex}
 
 
-\newpage
+\clearpage
 % This displays the bibliography for all cited external documents. All references have to be defined in the file references.bib and can then be cited from within this document.
+%kai
 \bibliographystyle{apacite}
 
 \bibliography{references}
 %\TODO{Chequear que los links estén correctos.}
-
+\addcontentsline{toc}{chapter}{Referencias Bibliogr\'aficas}
 
 % This creates an appendix chapter, comment if not needed.
 
